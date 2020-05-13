@@ -82,7 +82,7 @@ Car.prototype.drive = function(distance) {
    if(this.tank <= distance/this.milesPerGallon){ //tank is less than or equal to distance divided by miles per gallon 
      this.odometer += this.tank*this.milesPerGallon;// this changes odometer to reflect miles driven on the tank  
      this.tank = 0; // this puts tank at 0 
-     return `I ran out of fuel at ${this.odometer} miles`;
+     return `I ran out of fuel at ${this.odometer} miles`; // Final Stretch returning a string 
    }else{// this only runs if theres is enough gas
      this.odometer += distance;// adding miles to the tank 
      this.tank -= distance/this.milesPerGallon;// reducing the gas in the tank 
@@ -96,14 +96,16 @@ Car.prototype.drive = function(distance) {
     - Besides the methods on Person.prototype, babies have the ability to `.play()`:
         + Should return a string "Playing with x", x being the favorite toy.
 */
+
+// Baby Constructor
 function Baby(name,age,favoriteToy) {
    this.name = name;
    this.age = age;
    this.favoriteToy = favoriteToy;
 }
-Baby.prototype = Object.create(Person.prototype);
-Baby.prototype.play = function() {
-  return `Playing with ${this.favoriteToy}`;
+Baby.prototype = Object.create(Person.prototype); // methods on person.prototype
+Baby.prototype.play = function() { // babies have ability to play 
+  return `Playing with ${this.favoriteToy}`; // w their favorite toy 
 }
 /* 
   TASK 4
